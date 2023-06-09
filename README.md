@@ -253,6 +253,27 @@ private void 確認_Click(object sender, EventArgs e)
 ```cs
         private void 更新_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show(
+                "更新してもよろしいですか?",
+                "更新確認",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                // 何もしない
+            }
+            else
+            {
+                // 更新しないので処理を抜ける( No を選択 )
+                this.氏名.Focus();
+                this.氏名.SelectAll();
+                return;
+            }
+
+
             // 接続文字列の作成
             OdbcConnectionStringBuilder builder = new OdbcConnectionStringBuilder();
             builder.Driver = "MySQL ODBC 8.0 Unicode Driver";
@@ -300,6 +321,18 @@ private void 確認_Click(object sender, EventArgs e)
             myCommand.ExecuteNonQuery();
 
             myCon.Close();
+
+            this.社員コード.Clear();
+            this.氏名.Clear();
+            this.給与.Clear();
+            this.生年月日.Value = DateTime.Now;
+
+            this.ヘッド部.Enabled = true;
+            this.ボディ部.Enabled = false;
+
+            this.社員コード.Focus();
+            this.社員コード.SelectAll();
+
 
         }
 ```
