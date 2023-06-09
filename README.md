@@ -175,4 +175,8 @@ private void キャンセル_Click(object sender, EventArgs e)
 }
 ```
 
-#### (2) カーソルの移動順序の調整
+#### (2) カーソルの移動順序の調整( 表示メニューからタブオーダー )
+
+![image](https://github.com/winofsql/subject-230609/assets/1501327/7e9a3296-4391-4c02-abe4-92251a968797)
+
+※ 順番にクリックしていって決定する
