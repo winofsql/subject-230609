@@ -28,3 +28,34 @@ static OdbcConnection CreateConnection()
     return myCon;
 }
 ```
+
+### OdbcCommand と OdbcDataReader の使い方
+```cs
+// SQL実行用のオブジェクトを作成
+OdbcCommand myCommand = new OdbcCommand();
+
+// 実行用オブジェクトに必要な情報を与える
+myCommand.CommandText = myQuery;    // SQL
+myCommand.Connection = myCon;       // 接続
+
+// 次でする、データベースの値をもらう為のオブジェクトの変数の定義
+OdbcDataReader myReader;
+
+// SELECT を実行した結果を取得
+myReader = myCommand.ExecuteReader();
+
+// myReader からデータが読みだされる間ずっとループ
+while (myReader.Read())
+{
+    // 列名より列番号を取得
+    int index = myReader.GetOrdinal("氏名");
+    // 列番号で、値を取得して文字列化
+    string text = myReader.GetValue(index).ToString();
+    // 実際のコンソールに出力
+    Console.WriteLine(text);
+    // 出力ウインドウに出力
+    Debug.WriteLine($"Debug:{text}");
+}
+
+myReader.Close();
+```
