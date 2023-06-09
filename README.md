@@ -147,3 +147,5 @@ myReader.Close();
 給与.Size = new Size(100, 23);
 給与.TabIndex = 6;
 ```
+
+### 🔴 画面遷移時のカーソルコントロールを行う
