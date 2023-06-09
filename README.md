@@ -180,3 +180,70 @@ private void キャンセル_Click(object sender, EventArgs e)
 ![image](https://github.com/winofsql/subject-230609/assets/1501327/7e9a3296-4391-4c02-abe4-92251a968797)
 
 ※ 順番にクリックしていって決定する
+
+### 入力した社員コードの存在チェック
+```cs
+private void 確認_Click(object sender, EventArgs e)
+{
+    // 接続文字列の作成
+    OdbcConnectionStringBuilder builder = new OdbcConnectionStringBuilder();
+    builder.Driver = "MySQL ODBC 8.0 Unicode Driver";
+    // 接続用のパラメータを追加
+    builder.Add("server", "localhost");
+    builder.Add("database", "lightbox");
+    builder.Add("uid", "root");
+    builder.Add("pwd", "");
+
+    Console.WriteLine(builder.ConnectionString);
+    Debug.WriteLine($"Debug:{builder.ConnectionString}");
+
+    // 接続の作成
+    OdbcConnection myCon = new OdbcConnection();
+
+    // MySQL の接続準備完了
+    myCon.ConnectionString = builder.ConnectionString;
+
+    // MySQL に接続
+    myCon.Open();
+
+    // SQL
+    string myQuery =
+        @$"SELECT * 
+            from 社員マスタ where 社員コード = '{this.社員コード.Text}'";
+
+    // SQL実行用のオブジェクトを作成
+    OdbcCommand myCommand = new OdbcCommand();
+
+    // 実行用オブジェクトに必要な情報を与える
+    myCommand.CommandText = myQuery;    // SQL
+    myCommand.Connection = myCon;       // 接続
+
+    // 次でする、データベースの値をもらう為のオブジェクトの変数の定義
+    OdbcDataReader myReader;
+
+    // SELECT を実行した結果を取得
+    myReader = myCommand.ExecuteReader();
+
+    // myReader からデータが読みだされる間ずっとループ
+    bool result = myReader.Read();
+    if (result)
+    {
+        MessageBox.Show($"入力された社員コードは既に存在します : {this.社員コード.Text}");
+        this.社員コード.Focus();
+        this.社員コード.SelectAll();
+        return;
+    }
+
+
+    myReader.Close();
+    myCon.Close();
+
+
+    this.ヘッド部.Enabled = false;
+    this.ボディ部.Enabled = true;
+
+    this.氏名.Focus();
+    this.氏名.SelectAll();
+
+}
+```
