@@ -78,3 +78,7 @@ myReader.Close();
 
         }
 ```
+![image](https://github.com/winofsql/subject-230609/assets/1501327/d7982c86-4dea-4a7f-8ef1-708372b3de25)
+
+![image](https://github.com/winofsql/subject-230609/assets/1501327/a227a151-1832-4f73-a7de-cd9580a9297c)
+
