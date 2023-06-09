@@ -174,3 +174,5 @@ private void キャンセル_Click(object sender, EventArgs e)
 
 }
 ```
+
+#### (2) カーソルの移動順序の調整
