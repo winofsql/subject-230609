@@ -248,3 +248,59 @@ private void 確認_Click(object sender, EventArgs e)
 }
 ```
 ![image](https://github.com/winofsql/subject-230609/assets/1501327/9638a14c-140b-4ce7-a5a9-22340765872a)
+
+### 社員の新規更新
+```cs
+        private void 更新_Click(object sender, EventArgs e)
+        {
+            // 接続文字列の作成
+            OdbcConnectionStringBuilder builder = new OdbcConnectionStringBuilder();
+            builder.Driver = "MySQL ODBC 8.0 Unicode Driver";
+            // 接続用のパラメータを追加
+            builder.Add("server", "localhost");
+            builder.Add("database", "lightbox");
+            builder.Add("uid", "root");
+            builder.Add("pwd", "");
+
+            Console.WriteLine(builder.ConnectionString);
+            Debug.WriteLine($"Debug:{builder.ConnectionString}");
+
+            // 接続の作成
+            OdbcConnection myCon = new OdbcConnection();
+
+            // MySQL の接続準備完了
+            myCon.ConnectionString = builder.ConnectionString;
+
+            // MySQL に接続
+            myCon.Open();
+
+            // SQL
+            string myQuery =
+                @$"insert into `社員マスタ` (
+	`社員コード` 
+	,`氏名` 
+	,`給与` 
+	,`生年月日` 
+)
+ values(
+	'{this.社員コード.Text}'
+	,'{this.氏名.Text}'
+	,{this.給与.Text}
+	,'{this.生年月日.Value}'
+)
+";
+
+            // SQL実行用のオブジェクトを作成
+            OdbcCommand myCommand = new OdbcCommand();
+
+            // 実行用オブジェクトに必要な情報を与える
+            myCommand.CommandText = myQuery;    // SQL
+            myCommand.Connection = myCon;       // 接続
+
+            myCommand.ExecuteNonQuery();
+
+            myCon.Close();
+
+        }
+```
+
