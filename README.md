@@ -149,3 +149,25 @@ myReader.Close();
 ```
 
 ### 🔴 画面遷移時のカーソルコントロールを行う
+
+```cs
+private void 確認_Click(object sender, EventArgs e)
+{
+
+    this.ヘッド部.Enabled = false;
+    this.ボディ部.Enabled = true;
+
+    this.氏名.Focus();
+
+}
+
+private void キャンセル_Click(object sender, EventArgs e)
+{
+    this.ヘッド部.Enabled = true;
+    this.ボディ部.Enabled = false;
+
+    this.社員コード.Focus();
+    this.社員コード.SelectAll();
+
+}
+```
