@@ -247,3 +247,4 @@ private void 確認_Click(object sender, EventArgs e)
 
 }
 ```
+![image](https://github.com/winofsql/subject-230609/assets/1501327/9638a14c-140b-4ce7-a5a9-22340765872a)
