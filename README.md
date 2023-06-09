@@ -86,4 +86,64 @@ myReader.Close();
 
 ![image](https://github.com/winofsql/subject-230609/assets/1501327/67278dd7-3137-42ba-a502-b4fe8d717fd0)
 
+```cs
+// 
+// ヘッド部
+// 
+ヘッド部.Controls.Add(社員コード);
+ヘッド部.Controls.Add(ラベル1);
+ヘッド部.Controls.Add(ラベル2);
+ヘッド部.Controls.Add(確認);
+ヘッド部.Controls.Add(処理区分);
+ヘッド部.Location = new Point(64, 56);
+ヘッド部.Margin = new Padding(4);
+ヘッド部.Name = "ヘッド部";
+ヘッド部.Padding = new Padding(4);
+ヘッド部.Size = new Size(559, 139);
+ヘッド部.TabIndex = 2;
+ヘッド部.TabStop = false;
+ヘッド部.Text = "ヘッド部";
+// 
+// 社員コード
+// 
+社員コード.Location = new Point(140, 83);
+社員コード.Name = "社員コード";
+社員コード.Size = new Size(100, 23);
+社員コード.TabIndex = 5;
 
+// 
+// ボディ部
+// 
+ボディ部.Controls.Add(給与);
+ボディ部.Controls.Add(氏名);
+ボディ部.Controls.Add(ラベル4);
+ボディ部.Controls.Add(ラベル3);
+ボディ部.Controls.Add(Label5);
+ボディ部.Controls.Add(生年月日);
+ボディ部.Controls.Add(更新);
+ボディ部.Controls.Add(キャンセル);
+ボディ部.Enabled = false;
+ボディ部.Location = new Point(64, 218);
+ボディ部.Margin = new Padding(4);
+ボディ部.Name = "ボディ部";
+ボディ部.Padding = new Padding(4);
+ボディ部.Size = new Size(559, 241);
+ボディ部.TabIndex = 3;
+ボディ部.TabStop = false;
+ボディ部.Text = "ボディ部";
+// 
+// 氏名
+// 
+氏名.Location = new Point(140, 49);
+氏名.Name = "氏名";
+氏名.Size = new Size(148, 23);
+氏名.TabIndex = 6;
+
+// 
+// 給与
+// 
+給与.Location = new Point(140, 98);
+給与.Name = "給与";
+給与.Size = new Size(100, 23);
+給与.TabIndex = 6;
+```
