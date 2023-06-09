@@ -158,6 +158,7 @@ private void 確認_Click(object sender, EventArgs e)
     this.ボディ部.Enabled = true;
 
     this.氏名.Focus();
+    this.氏名.SelectAll();
 
 }
 
