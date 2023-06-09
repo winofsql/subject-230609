@@ -59,3 +59,22 @@ while (myReader.Read())
 
 myReader.Close();
 ```
+### Form アプリケーションにおける GroupBox の状態変更
+```cs
+        private void 確認_Click(object sender, EventArgs e)
+        {
+            //Debug.WriteLine("確認");
+            //MessageBox.Show("確認");
+
+            this.ヘッド部.Enabled = false;
+            this.ボディ部.Enabled = true;
+
+        }
+
+        private void キャンセル_Click(object sender, EventArgs e)
+        {
+            this.ヘッド部.Enabled = true;
+            this.ボディ部.Enabled = false;
+
+        }
+```
