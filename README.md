@@ -179,6 +179,8 @@ private void キャンセル_Click(object sender, EventArgs e)
 
 ![image](https://github.com/winofsql/subject-230609/assets/1501327/7e9a3296-4391-4c02-abe4-92251a968797)
 
+![image](https://github.com/winofsql/subject-230609/assets/1501327/d6b40e43-9642-4afc-aa81-e653a5308a86)
+
 ※ 順番にクリックしていって決定する
 
 ### 入力した社員コードの存在チェック
@@ -248,8 +250,6 @@ private void 確認_Click(object sender, EventArgs e)
 }
 ```
 ![image](https://github.com/winofsql/subject-230609/assets/1501327/9638a14c-140b-4ce7-a5a9-22340765872a)
-
-![image](https://github.com/winofsql/subject-230609/assets/1501327/d6b40e43-9642-4afc-aa81-e653a5308a86)
 
 
 ### 社員の新規更新
