@@ -180,6 +180,7 @@ private void キャンセル_Click(object sender, EventArgs e)
 ![image](https://github.com/winofsql/subject-230609/assets/1501327/d6b40e43-9642-4afc-aa81-e653a5308a86)
 
 ※ 順番にクリックしていって決定する
+※ もう一度タブオーダーを選択すると非表示になる
 
 ### 入力した社員コードの存在チェック
 ```cs
